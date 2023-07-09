@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-component">
+    <div class="search-area">
+    <div class="search-block">
+        <label class='title' for="location">Location:</label>
+        <select id="location" class="select-dropdown">
+          <option value="">All</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Calcutta">Calcutta</option>
+          <option value="Chennai">Chennai</option>
+          <!-- Add more location options here -->
+        </select>
+      </div>
+      
+      <div search-block>
+        <label  class='title' for="jobRole">Job Role:</label>
+        <select id="jobRole"  class="select-dropdown">
+          <option value="">All</option>
+          <option value="Developer">Developer</option>
+          <option value="Designer">Designer</option>
+          <option value="Project Manager">Project Manager</option>
+          <!-- Add more job roles here -->
+        </select>
+      </div>
+      
+      <button class='search-button' onclick="searchCandidates()">Search</button>
+    </div>
+      <div id="results" class="results-candidates  search-block">
+        <!-- The search results will be displayed here -->
+      </div>
+    </div>   
+      <script src="search.js"></script>
+</body>
+</html>
