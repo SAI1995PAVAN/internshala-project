@@ -66,16 +66,6 @@ let searchResults=[
     resultsContainer.innerHTML = "";
     
   
-  // let finalResults = searchResults.filter((candidate) => {
-  //   let resultArray
-  //   if (candidate.location !== "" && candidate.jobRole !== "") {
-  //     console.log(candidate)
-  //     return candidate.location === location && candidate.jobRole === jobRole;
-  //   } else if (candidate.location === '' && candidate.jobRole === '') {
-  //     return candidate.location !=='' && candidate.jobRole !==''
-  //   }
-    
-  // })
   let finalResults = searchResults.filter((candidate) => {
     if (candidate.location !== "" && candidate.jobRole !== "") {
       if (location === "all" && jobRole === "all") {
