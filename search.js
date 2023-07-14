@@ -1,3 +1,6 @@
+
+
+
 function searchCandidates() {
     let location = document.getElementById("location").value;
     let jobRole = document.getElementById("jobRole").value;
@@ -63,11 +66,32 @@ let searchResults=[
     resultsContainer.innerHTML = "";
     
   
-  let finalResults=searchResults.filter((candidate) => {
-    return candidate.location===location && candidate.jobRole===jobRole
-  })
+  // let finalResults = searchResults.filter((candidate) => {
+  //   let resultArray
+  //   if (candidate.location !== "" && candidate.jobRole !== "") {
+  //     console.log(candidate)
+  //     return candidate.location === location && candidate.jobRole === jobRole;
+  //   } else if (candidate.location === '' && candidate.jobRole === '') {
+  //     return candidate.location !=='' && candidate.jobRole !==''
+  //   }
+    
+  // })
+  let finalResults = searchResults.filter((candidate) => {
+    if (candidate.location !== "" && candidate.jobRole !== "") {
+      if (location === "all" && jobRole === "all") {
+        return candidate; // Include all candidates
+      } else if (location === "all") {
+        return candidate.jobRole === jobRole; // Match job role only
+      } else if (jobRole === "all") {
+        return candidate.location === location; // Match location only
+      } else {
+        return candidate.location === location && candidate.jobRole === jobRole; // Match both location and job role
+      }
+    }
+  });
+  
   if (finalResults.length > 0) {
-      for (let i = 0; i < searchResults.length; i++) {
+      for (let i = 0; i < finalResults.length; i++) {
         let candidate = finalResults[i];
         
         // Create a new result element

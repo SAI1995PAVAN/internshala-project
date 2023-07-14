@@ -1,4 +1,6 @@
 
+
+
 document.getElementById('register-form').addEventListener('submit', function(event) {
   // Prevent form submission
   event.preventDefault(); 
